@@ -1,0 +1,51 @@
+title Vehicle Repair Process
+
+actor Customer
+
+participant Garage
+participant Appointment
+participant Employee
+participant Repair
+participant Vehicle
+
+Customer -> Garage : requestAppointment(vehicle)
+activate Garage
+
+Garage -> Employee : checkAvailability()
+
+alt no employee available
+    Garage -> Customer : proposeNewDate()
+    deactivate Garage
+else employee available
+    Garage -> Appointment : createAppointment(date, reason)
+    activate Appointment
+    Appointment --> Garage : appointmentConfirmed()
+    deactivate Appointment
+
+    Garage -> Employee : assignRepair(vehicle)
+    activate Employee
+
+    Employee -> Repair : createRepair(vehicle)
+    activate Repair
+
+    alt vehicle irreparable (RSV)
+        Repair -> Garage : reportRSV()
+        Garage -> Customer : informVehicleIrreparable()
+        deactivate Repair
+        deactivate Employee
+        
+    else repair possible
+        Repair -> Vehicle : performDiagnostic()
+        Vehicle --> Repair : diagnosticOK()
+        
+        Repair -> Vehicle : repairComponents()
+        Vehicle --> Repair : componentsRepaired()
+
+        Employee <- Repair : repairCompleted()
+
+        Employee -> Garage : closeRepair()
+
+        Garage -> Customer : notifyRepairDone()
+
+    end
+end
