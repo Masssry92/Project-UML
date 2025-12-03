@@ -1,0 +1,56 @@
+<diagram program="umletino" version="15.1"><zoom_level>12</zoom_level><element><id>UMLClass</id><coordinates><x>120</x><y>0</y><w>168</w><h>132</h></coordinates><panel_attributes>Customer
+--
+- id : int
+- name : String
+- vehicule: Vehicule
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>24</x><y>444</y><w>168</w><h>108</h></coordinates><panel_attributes>Car
+--
+- boite : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>204</x><y>444</y><w>168</w><h>108</h></coordinates><panel_attributes>Motorbike
+--
+- modèle : String
+- cylindrée : Int
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>552</x><y>192</y><w>180</w><h>120</h></coordinates><panel_attributes>Employee
+--
+- ID : int
+- name : String
+- competence : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>588</x><y>0</y><w>168</w><h>132</h></coordinates><panel_attributes>Garage
+--
+- id : int
+- name : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>204</y><w>168</w><h>84</h></coordinates><panel_attributes>Vehicle
+--
+- plaque : String
+- marque : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>444</y><w>192</w><h>108</h></coordinates><panel_attributes>Repair
+--
+- id : int
+- revision : Revision
+- pneus : List&lt;Pneu&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>120</y><w>108</w><h>96</h></coordinates><panel_attributes>m1=1
+m2=1..n</panel_attributes><additional_attributes>10;10;60;60</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>120</y><w>60</w><h>108</h></coordinates><panel_attributes>m1=0..n
+m2=1</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>276</x><y>240</y><w>348</w><h>228</h></coordinates><panel_attributes>m1=1
+m2=0..n</panel_attributes><additional_attributes>10;10;270;170</additional_attributes></element><element><id>UMLClass</id><coordinates><x>660</x><y>636</y><w>120</w><h>108</h></coordinates><panel_attributes>Tire
+--
+- ID : int 
+- type : int
+- roue : int 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>672</x><y>540</y><w>72</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..n</panel_attributes><additional_attributes>10;10;30;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>492</x><y>636</y><w>120</w><h>108</h></coordinates><panel_attributes>Revision
+--
+- ID : Int
+- mileage : int
+- type : String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>540</y><w>72</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=1
+m2=0..1</panel_attributes><additional_attributes>40;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>636</x><y>300</y><w>60</w><h>168</h></coordinates><panel_attributes>m1=1
+m2=0..n</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>192</x><y>276</y><w>36</w><h>108</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>372</x><y>24</y><w>120</w><h>108</h></coordinates><panel_attributes>Appointment
+--
+- id : int
+- date : Date
+- reason : String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>276</x><y>72</y><w>120</w><h>48</h></coordinates><panel_attributes>m1=1
+m2=0..n</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>480</x><y>72</y><w>132</w><h>48</h></coordinates><panel_attributes>m1=0..n
+m2=1</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>Relation</id><coordinates><x>96</x><y>336</y><w>228</w><h>48</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;170;20</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>348</y><w>36</w><h>120</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>96</x><y>348</y><w>36</w><h>120</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>276</x><y>120</y><w>336</w><h>132</h></coordinates><panel_attributes>m1= 0..n
+m2=1</panel_attributes><additional_attributes>10;90;260;10</additional_attributes></element></diagram>
