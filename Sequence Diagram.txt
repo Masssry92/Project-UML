@@ -16,6 +16,7 @@ Garage -> Employee : checkAvailability()
 alt no employee available
     Garage -> Customer : proposeNewDate()
     deactivate Garage
+
 else employee available
     Garage -> Appointment : createAppointment(date, reason)
     activate Appointment
@@ -33,19 +34,19 @@ else employee available
         Garage -> Customer : informVehicleIrreparable()
         deactivate Repair
         deactivate Employee
-        
+
     else repair possible
+        
         Repair -> Vehicle : performDiagnostic()
         Vehicle --> Repair : diagnosticOK()
-        
+
         Repair -> Vehicle : repairComponents()
         Vehicle --> Repair : componentsRepaired()
 
-        Employee <- Repair : repairCompleted()
+        Repair --> Employee : repairCompleted()
 
         Employee -> Garage : closeRepair()
 
         Garage -> Customer : notifyRepairDone()
-
     end
 end
