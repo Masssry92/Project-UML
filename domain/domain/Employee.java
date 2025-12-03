@@ -1,0 +1,31 @@
+package domain;
+
+public class Employee {
+    private int id;
+    private String name;
+    private String competence;
+
+    public Employee(int id, String name, String competence) {
+        this.id = id;
+        this.name = name;
+        this.competence = competence;
+    }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getCompetence() { return competence; }
+    public void setCompetence(String competence) { this.competence = competence; }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", competence='" + competence + '\'' +
+                '}';
+    }
+}
