@@ -1,31 +1,61 @@
 package domain;
 
 public class Tire {
-    private int id;
-    private String type;
-    private int roue;
 
-    public Tire(int id, String type, int roue) {
-        this.id = id;
-        this.type = type;
-        this.roue = roue;
+    private final int id;
+    private final String type;
+    private final int wheel;
+
+    private Tire(Builder builder) {
+        this.id = builder.id;
+        this.type = builder.type;
+        this.wheel = builder.wheel;
+    }
+    
+    public int getId() {
+        return id;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getType() {
+        return type;
+    }
 
-    public String getType() { return type; }
-    public void setType(String type) { this.type = type; }
-
-    public int getRoue() { return roue; }
-    public void setRoue(int roue) { this.roue = roue; }
+    public int getWheel() {
+        return wheel;
+    }
 
     @Override
     public String toString() {
         return "Tire{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
-                ", roue=" + roue +
+                ", wheel=" + wheel +
                 '}';
+    }
+
+    
+    public static class Builder {
+        private int id;
+        private String type;
+        private int wheel;
+
+        public Builder setId(int id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setType(String type) {
+            this.type = type;
+            return this;
+        }
+
+        public Builder setWheel(int wheel) {
+            this.wheel = wheel;
+            return this;
+        }
+
+        public Tire build() {
+            return new Tire(this);
+        }
     }
 }
