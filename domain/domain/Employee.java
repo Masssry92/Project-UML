@@ -28,7 +28,7 @@ public class Employee {
 
     public static class Builder {
         private int id;
-        private String name;
+        private String name; 
         private String competency;
 
         public Builder setId(int id) {

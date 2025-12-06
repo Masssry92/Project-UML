@@ -4,30 +4,93 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Garage {
-    private int id;
-    private String name;
-    private List<Employee> employees;
-    private List<Customer> customers;
-    private List<Appointment> appointments;
 
-    public Garage(int id, String name) {
-        this.id = id;
-        this.name = name;
-        this.employees = new ArrayList<>();
-        this.customers = new ArrayList<>();
-        this.appointments = new ArrayList<>();
+    private final int id;
+    private final String name;
+    private final List<Employee> employees;
+    private final List<Customer> customers;
+    private final List<Appointment> appointments;
+
+    private Garage(Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+
+        this.employees = new ArrayList<>(builder.employees);
+        this.customers = new ArrayList<>(builder.customers);
+        this.appointments = new ArrayList<>(builder.appointments);
     }
 
-    public int getId() { return id; }
-    public String getName() { return name; }
+    
+    public int getId() {
+        return id;
+    }
 
-    public List<Employee> getEmployees() { return employees; }
-    public List<Customer> getCustomers() { return customers; }
-    public List<Appointment> getAppointments() { return appointments; }
+    public String getName() {
+        return name;
+    }
 
-    public void addEmployee(Employee e) { employees.add(e); }
-    public void addCustomer(Customer c) { customers.add(c); }
-    public void addAppointment(Appointment a) { appointments.add(a); }
+    public List<Employee> getEmployees() {
+        return new ArrayList<>(employees);
+    }
+
+    public List<Customer> getCustomers() {
+        return new ArrayList<>(customers);
+    }
+
+    public List<Appointment> getAppointments() {
+        return new ArrayList<>(appointments);
+    }
+
+    
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
+
+    public void addCustomer(Customer customer) {
+        customers.add(customer);
+    }
+
+    public void addAppointment(Appointment appointment) {
+        appointments.add(appointment);
+    }
+
+
+    public static class Builder {
+        private int id;
+        private String name;
+        private List<Employee> employees = new ArrayList<>();
+        private List<Customer> customers = new ArrayList<>();
+        private List<Appointment> appointments = new ArrayList<>();
+
+        public Builder setId(int id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setEmployees(List<Employee> employees) {
+            this.employees = employees;
+            return this;
+        }
+
+        public Builder setCustomers(List<Customer> customers) {
+            this.customers = customers;
+            return this;
+        }
+
+        public Builder setAppointments(List<Appointment> appointments) {
+            this.appointments = appointments;
+            return this;
+        }
+
+        public Garage build() {
+            return new Garage(this);
+        }
+    }
 
     @Override
     public String toString() {
