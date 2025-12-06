@@ -1,31 +1,62 @@
 package domain;
 
 public class Employee {
-    private int id;
-    private String name;
-    private String competence;
 
-    public Employee(int id, String name, String competence) {
-        this.id = id;
-        this.name = name;
-        this.competence = competence;
+    private final int id;
+    private final String name;
+    private final String competency;
+
+    private Employee(Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+        this.competency = builder.competency;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public int getId() {
+        return id;
+    }
 
-    public String getCompetence() { return competence; }
-    public void setCompetence(String competence) { this.competence = competence; }
+    public String getName() {
+        return name;
+    }
+
+    public String getCompetency() {
+        return competency;
+    }
+
+
+    public static class Builder {
+        private int id;
+        private String name;
+        private String competency;
+
+        public Builder setId(int id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setCompetency(String competency) {
+            this.competency = competency;
+            return this;
+        }
+
+        public Employee build() {
+            return new Employee(this);
+        }
+    }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", competence='" + competence + '\'' +
+                ", competency='" + competency + '\'' +
                 '}';
     }
 }
