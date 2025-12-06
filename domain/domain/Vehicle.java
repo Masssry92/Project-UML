@@ -1,25 +1,52 @@
 package domain;
 
 public abstract class Vehicle {
-    private String plaque;
-    private String marque;
 
-    public Vehicle(String plaque, String marque) {
-        this.plaque = plaque;
-        this.marque = marque;
+    protected final String plate;
+    protected final String brand;
+
+    protected Vehicle(Builder<?> builder) {
+        this.plate = builder.plate;
+        this.brand = builder.brand;
     }
 
-    public String getPlaque() { return plaque; }
-    public void setPlaque(String plaque) { this.plaque = plaque; }
+    
+    public String getPlate() {
+        return plate;
+    }
 
-    public String getMarque() { return marque; }
-    public void setMarque(String marque) { this.marque = marque; }
+    public String getBrand() {
+        return brand;
+    }
+
+
+    public static abstract class Builder<T extends Builder<T>> {
+
+        protected String plate;
+        protected String brand;
+
+        public T setPlate(String plate) {
+            this.plate = plate;
+            return self();
+        }
+
+        public T setBrand(String brand) {
+            this.brand = brand;
+            return self();
+        }
+
+        
+        protected abstract T self();
+
+    
+        public abstract Vehicle build();
+    }
 
     @Override
     public String toString() {
         return "Vehicle{" +
-                "plaque='" + plaque + '\'' +
-                ", marque='" + marque + '\'' +
+                "plate='" + plate + '\'' +
+                ", brand='" + brand + '\'' +
                 '}';
     }
 }
