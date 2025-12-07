@@ -1,20 +1,32 @@
-package factory;
+package domain;
 
-import domain.*;
+public abstract class Vehicle {
+    private String plate;
+    private String brand;
 
-public class VehicleFactory {
+    public Vehicle(String plate, String brand) {
+        this.plate = plate;
+        this.brand = brand;
+    }
 
-    public static Vehicle createVehicle(String type, String plaque, String marque) {
-        if (type == null) return null;
+    public String getPlate() {
+        return plate;
+    }
 
-        switch (type.toLowerCase()) {
-            case "car":
-                return new Car(plaque, marque, "automatic");
-            case "motorbike":
-                return new Motorbike(plaque, marque, "sport", 650);
-            default:
-                System.out.println("Unknown vehicle type: " + type);
-                return null;
-        }
+    public void setPlate(String plate) {
+        this.plate = plate;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{plate='" + plate + "', brand='" + brand + "'}";
     }
 }
