@@ -1,4 +1,4 @@
-package domain;
+package fr.efrei.domain;
 
 public class Servicing {
     private int id;
