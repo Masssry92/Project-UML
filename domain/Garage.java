@@ -1,95 +1,73 @@
-package domain;
+package fr.efrei.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Garage {
 
-    private final int id;
-    private final String name;
-    private final List<Employee> employees;
-    private final List<Customer> customers;
-    private final List<Appointment> appointments;
+    private int id;
+    private String name;
 
-    private Garage(Builder builder) {
-        this.id = builder.id;
-        this.name = builder.name;
+    private List<Employee> employees;
+    private List<Customer> customers;
+    private List<Appointment> appointments;
+    private List<Repair> repairs;
 
-        this.employees = new ArrayList<>(builder.employees);
-        this.customers = new ArrayList<>(builder.customers);
-        this.appointments = new ArrayList<>(builder.appointments);
+    public Garage(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.employees = new ArrayList<>();
+        this.customers = new ArrayList<>();
+        this.appointments = new ArrayList<>();
+        this.repairs = new ArrayList<>();
     }
 
-    
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public List<Employee> getEmployees() {
-        return new ArrayList<>(employees);
+        return employees;
     }
 
     public List<Customer> getCustomers() {
-        return new ArrayList<>(customers);
+        return customers;
     }
 
     public List<Appointment> getAppointments() {
-        return new ArrayList<>(appointments);
+        return appointments;
     }
 
-    
-    public void addEmployee(Employee employee) {
-        employees.add(employee);
+    public List<Repair> getRepairs() {
+        return repairs;
     }
 
-    public void addCustomer(Customer customer) {
-        customers.add(customer);
+    public void addEmployee(Employee e) {
+        employees.add(e);
     }
 
-    public void addAppointment(Appointment appointment) {
-        appointments.add(appointment);
+    public void addCustomer(Customer c) {
+        customers.add(c);
     }
 
+    public void addAppointment(Appointment a) {
+        appointments.add(a);
+    }
 
-    public static class Builder {
-        private int id;
-        private String name;
-        private List<Employee> employees = new ArrayList<>();
-        private List<Customer> customers = new ArrayList<>();
-        private List<Appointment> appointments = new ArrayList<>();
-
-        public Builder setId(int id) {
-            this.id = id;
-            return this;
-        }
-
-        public Builder setName(String name) {
-            this.name = name;
-            return this;
-        }
-
-        public Builder setEmployees(List<Employee> employees) {
-            this.employees = employees;
-            return this;
-        }
-
-        public Builder setCustomers(List<Customer> customers) {
-            this.customers = customers;
-            return this;
-        }
-
-        public Builder setAppointments(List<Appointment> appointments) {
-            this.appointments = appointments;
-            return this;
-        }
-
-        public Garage build() {
-            return new Garage(this);
-        }
+    public void addRepair(Repair r) {
+        repairs.add(r);
     }
 
     @Override
@@ -100,6 +78,7 @@ public class Garage {
                 ", employees=" + employees.size() +
                 ", customers=" + customers.size() +
                 ", appointments=" + appointments.size() +
+                ", repairs=" + repairs.size() +
                 '}';
     }
 }
