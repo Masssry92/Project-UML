@@ -1,6 +1,6 @@
-package repository;
+package fr.efrei.repository;
 
-import domain.Customer;
+import fr.efrei.domain.Customer;
 import java.util.List;
 
 public interface CustomerRepository {
