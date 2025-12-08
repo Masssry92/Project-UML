@@ -1,6 +1,6 @@
-package repository;
+package fr.efrei.repository;
 
-import domain.Repair;
+import fr.efrei.domain.Repair;
 import java.util.ArrayList;
 import java.util.List;
 
