@@ -1,32 +1,31 @@
 package fr.efrei.domain;
 
-public abstract class Vehicle {
-    private String plate;
-    private String brand;
+public class Tire {
+    private int id;
+    private String type;
+    private int wheel;
 
-    public Vehicle(String plate, String brand) {
-        this.plate = plate;
-        this.brand = brand;
+    public Tire(int id, String type, int wheel) {
+        this.id = id;
+        this.type = type;
+        this.wheel = wheel;
     }
 
-    public String getPlate() {
-        return plate;
-    }
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setPlate(String plate) {
-        this.plate = plate;
-    }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+    public int getWheel() { return wheel; }
+    public void setWheel(int wheel) { this.wheel = wheel; }
 
     @Override
     public String toString() {
-        return "Vehicle{plate='" + plate + "', brand='" + brand + "'}";
+        return "Tire{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", wheel=" + wheel +
+                '}';
     }
 }
