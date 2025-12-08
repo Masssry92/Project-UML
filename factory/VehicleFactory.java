@@ -1,8 +1,8 @@
-package factory;
+package fr.efrei.factory;
 
-import domain.Car;
-import domain.Motorbike;
-import domain.Vehicle;
+import fr.efrei.domain.Car;
+import fr.efrei.domain.Motorbike;
+import fr.efrei.domain.Vehicle;
 
 public class VehicleFactory {
 
