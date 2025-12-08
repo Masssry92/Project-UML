@@ -1,8 +1,8 @@
-package factory;
+package fr.efrei.factory;
 
-import domain.Repair;
-import domain.Servicing;
-import domain.Tire;
+import fr.efrei.domain.Repair;
+import fr.efrei.domain.Servicing;
+import fr.efrei.domain.Tire;
 import java.util.List;
 
 public class RepairFactory {
