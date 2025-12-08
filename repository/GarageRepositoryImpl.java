@@ -1,6 +1,6 @@
-package repository;
+package fr.efrei.repository;
 
-import domain.Garage;
+import fr.efrei.domain.Garage;
 import java.util.ArrayList;
 import java.util.List;
 
