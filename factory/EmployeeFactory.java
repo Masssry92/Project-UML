@@ -1,6 +1,6 @@
-package factory;
+package fr.efrei.factory;
 
-import domain.Employee;
+import fr.efrei.domain.Employee;
 
 public class EmployeeFactory {
 
