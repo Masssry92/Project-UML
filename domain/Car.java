@@ -1,4 +1,4 @@
-package domain;
+package fr.efrei.domain;
 
 public class Car extends Vehicle {
     private String gearbox;
