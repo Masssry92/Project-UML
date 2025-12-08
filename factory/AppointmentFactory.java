@@ -1,6 +1,6 @@
-package factory;
+package fr.efrei.factory;
 
-import domain.Appointment;
+import fr.efrei.domain.Appointment;
 import java.util.Date;
 
 public class AppointmentFactory {
