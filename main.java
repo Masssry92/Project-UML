@@ -1,9 +1,11 @@
-import domain.*;
-import factory.*;
+package fr.efrei;
+
+import fr.efrei.domain.*;
+import fr.efrei.factory.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import repository.*;
+import fr.efrei.repository.*;
 
 public class Main {
 
