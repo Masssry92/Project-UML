@@ -1,6 +1,6 @@
-package repository;
+package fr.efrei.repository;
 
-import domain.Vehicle;
+import fr.efrei.domain.Vehicle;
 import java.util.List;
 
 public interface VehicleRepository {
