@@ -1,6 +1,6 @@
-package factory;
+package fr.efrei.factory;
 
-import domain.Garage;
+import fr.efrei.domain.Garage;
 
 public class GarageFactory {
 
