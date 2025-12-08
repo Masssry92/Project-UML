@@ -1,6 +1,6 @@
-package repository;
+package fr.efrei.repository;
 
-import domain.Appointment;
+import fr.efrei.domain.Appointment;
 import java.util.List;
 
 public interface AppointmentRepository {
