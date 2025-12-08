@@ -1,12 +1,9 @@
-package app;
-
 import domain.*;
 import factory.*;
-import repository.*;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import repository.*;
 
 public class Main {
 
@@ -28,6 +25,8 @@ public class Main {
     private static final GarageRepository garageRepo = GarageRepositoryImpl.getInstance();
 
     public static void main(String[] args) {
+        System.out.println("== EFREI Garage system starting ==");
+
         garage = GarageFactory.createGarage(1, "EFREI Garage");
         garageRepo.add(garage);
 

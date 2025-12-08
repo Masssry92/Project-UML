@@ -7,6 +7,7 @@ import java.util.List;
 public class AppointmentRepositoryImpl implements AppointmentRepository {
 
     private static AppointmentRepositoryImpl instance;
+    @SuppressWarnings("FieldMayBeFinal")
     private List<Appointment> appointments = new ArrayList<>();
 
     private AppointmentRepositoryImpl() {}
