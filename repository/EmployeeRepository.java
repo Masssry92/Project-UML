@@ -1,6 +1,6 @@
-package repository;
+package fr.efrei.repository;
 
-import domain.Employee;
+import fr.efrei.domain.Employee;
 import java.util.List;
 
 public interface EmployeeRepository {
