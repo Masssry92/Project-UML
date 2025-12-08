@@ -1,4 +1,4 @@
-package domain;
+package fr.efrei.domain;
 
 public abstract class Vehicle {
     private String plate;
