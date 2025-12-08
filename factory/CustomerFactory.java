@@ -1,8 +1,8 @@
-package factory;
+package fr.efrei.factory;
 
-import domain.Customer;
-import domain.Vehicle;
-import domain.Garage;
+import fr.efrei.domain.Customer;
+import fr.efrei.domain.Vehicle;
+import fr.efrei.domain.Garage;
 
 public class CustomerFactory {
 
